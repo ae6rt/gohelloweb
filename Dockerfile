@@ -1,3 +1,4 @@
-FROM scratch
+FROM alpine
+RUN apk update && apk upgrade && apk add curl
 ADD server-linux /
-ENTRYPOINT ["/server-linux"]
+CMD ["/server-linux"]
