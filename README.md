@@ -22,20 +22,9 @@ func main() {
 }
 ```
 
-### Build static binaries for Mac and Linux
+### Run it
 
-```
-$ CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o server-osx
-$ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o server-linux
-```
-
-### Run locally to get familiar with it
-
-```
-$ ./server-osx 
-```
-
-Hit it with curl
+Start the server and access it with curl:
 
 ```
 $ curl http://localhost:8080/foo
