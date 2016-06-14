@@ -1,8 +1,12 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(r.URL.Path)
 	w.Write([]byte("hello"))
 }
 
