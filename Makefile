@@ -1,10 +1,11 @@
+.PHONY: build
 build:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
 
-image:
+.PHONY: image
+image: build
 	docker build -t ae6rt/gohelloweb:latest .
 
-push:
+.PHONY: push
+push: image
 	docker push ae6rt/gohelloweb:latest 
-
-.PHONY: build package push
